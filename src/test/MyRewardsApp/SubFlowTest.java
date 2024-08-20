@@ -2,9 +2,6 @@ import org.junit.Test;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.interactions.PointerInput;
 import org.openqa.selenium.interactions.Sequence;
-
-import javax.swing.*;
-
 import java.time.Duration;
 import java.util.Collections;
 
@@ -13,19 +10,12 @@ import static io.appium.java_client.AppiumBy.*;
 public class SubFlowTest extends BaseClass{
 
     @Test
-
     public void subFlowsTest() throws InterruptedException {
         ufoneTest();
         unsubscribeService();
         ptclTest();
         unsubscribeService();
-
-
     }
-
-
-
-
 
     void ufoneTest() throws InterruptedException {
 
