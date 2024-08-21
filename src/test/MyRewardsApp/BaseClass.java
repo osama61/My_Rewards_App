@@ -2,6 +2,7 @@ import io.appium.java_client.AppiumDriver;
 import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -14,11 +15,11 @@ public class BaseClass {
     protected static AppiumDriver driver;
     protected static WebDriverWait wait;
 
-    void clickWhenReady(By locator){
+    public void clickWhenReady(By locator){
         wait.until(ExpectedConditions.elementToBeClickable(locator)).click();
     }
 
-    void sendWhenReady(By locator ,String keys){
+    public void sendWhenReady(By locator ,String keys){
         wait.until(ExpectedConditions.elementToBeClickable(locator)).sendKeys(keys);
     }
 

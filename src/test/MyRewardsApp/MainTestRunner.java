@@ -9,7 +9,7 @@ import org.junit.runners.Suite;
         ScrollingTest.class,
         SearchFunctionalityTest.class,
         StoreSectionTest.class,
-        OnlineStoreTest.class
+        LifeStyleTest.class
 })
 public class MainTestRunner {
 

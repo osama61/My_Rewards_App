@@ -12,9 +12,9 @@ public class HomeScreenTest extends BaseClass{
     @Test
     public void home() throws InterruptedException {
 
-        clickWhenReady(xpath("//android.widget.Button[@resource-id='com.android.packageinstaller:id/permission_allow_button']"));
-        clickWhenReady(androidUIAutomator("new UiSelector().text(\"Islamabad\")"));
-        clickWhenReady(androidUIAutomator("new UiSelector().text(\"Continue\")"));
+//        clickWhenReady(xpath("//android.widget.Button[@resource-id='com.android.packageinstaller:id/permission_allow_button']"));
+//        clickWhenReady(androidUIAutomator("new UiSelector().text(\"Islamabad\")"));
+//        clickWhenReady(androidUIAutomator("new UiSelector().text(\"Continue\")"));
 
         String welcome = wait.until(ExpectedConditions.elementToBeClickable(locator)).getText();
         System.out.println(welcome);

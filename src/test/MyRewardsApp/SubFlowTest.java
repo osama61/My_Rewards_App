@@ -13,14 +13,14 @@ public class SubFlowTest extends BaseClass{
     public void subFlowsTest() throws InterruptedException {
         ufoneTest();
         unsubscribeService();
-        ptclTest();
-        unsubscribeService();
+//        ptclTest();
+//        unsubscribeService();
     }
 
     void ufoneTest() throws InterruptedException {
 
         clickWhenReady(androidUIAutomator("new UiSelector().description(\"Login\")"));
-        sendWhenReady(xpath("//android.widget.EditText[@text=\"033xxxxxxxx or 051xxxxxxx\"]"),"03362283366");
+        sendWhenReady(xpath("//android.widget.EditText[@text=\"033xxxxxxxx or 051xxxxxxx\"]"),"03369390421");
         clickWhenReady(androidUIAutomator("new UiSelector().description(\"Send OTP\")"));
         Thread.sleep(25000);
         clickWhenReady(androidUIAutomator("new UiSelector().description(\"Proceed\")"));
@@ -40,7 +40,8 @@ public class SubFlowTest extends BaseClass{
     }
 
     void unsubscribeService() throws InterruptedException {
-        Thread.sleep(3000);
+//        clickWhenReady(androidUIAutomator("new UiSelector().description(\"Login\")"));
+//        clickWhenReady(androidUIAutomator("new UiSelector().text(\"\uE5C4\")"));
         clickWhenReady(androidUIAutomator("new UiSelector().className(\"android.view.ViewGroup\").instance(2)"));
         Thread.sleep(3000);
         clickWhenReady(androidUIAutomator("new UiSelector().text(\"Settings\")"));
@@ -59,7 +60,7 @@ public class SubFlowTest extends BaseClass{
         Sequence slide = new Sequence(finger, 1);
         slide.addAction(finger.createPointerMove(Duration.ofMillis(0), PointerInput.Origin.viewport(), startX, startY));
         slide.addAction(finger.createPointerDown(PointerInput.MouseButton.LEFT.asArg()));
-        slide.addAction(finger.createPointerMove(Duration.ofMillis(2000), PointerInput.Origin.viewport(), endX, endY));
+        slide.addAction(finger.createPointerMove(Duration.ofMillis(2500), PointerInput.Origin.viewport(), endX, endY));
         slide.addAction(finger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
 
         driver.perform(Collections.singletonList(slide));

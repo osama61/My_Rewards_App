@@ -1,18 +1,35 @@
+import static com.codeborne.selenide.appium.SelenideAppium.$;
 import static io.appium.java_client.AppiumBy .*;
+
+import io.appium.java_client.AppiumBy;
 import org.junit.Test;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 
 public class StoreSectionTest extends BaseClass {
     @Test
-    public void storeDeals() {
+    public void storeDeals() throws InterruptedException {
+        ptclUser();
+        ufoneUser();
 
-        clickWhenReady(xpath("//android.widget.Button[@resource-id='com.android.packageinstaller:id/permission_allow_button']"));
-        clickWhenReady(androidUIAutomator("new UiSelector().text(\"Islamabad\")"));
-        clickWhenReady(androidUIAutomator("new UiSelector().text(\"Continue\")"));
+    }
+
+    public void ptclUser() throws InterruptedException {
+
         clickWhenReady(androidUIAutomator("new UiSelector().description(\"Stores\")"));
-        clickWhenReady(androidUIAutomator("new UiSelector().className(\"android.view.ViewGroup\").instance(21)"));
+        clickWhenReady(androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"Alpinebear\"));"));
         clickWhenReady(androidUIAutomator("new UiSelector().description(\"Get Discount\")"));
-        clickWhenReady(xpath("//android.widget.TextView[@text=\"\uE5C4\"]"));
-        clickWhenReady(androidUIAutomator("new UiSelector().text(\"\uEA2C\")"));
+        clickWhenReady(androidUIAutomator("new UiSelector().description(\"Ok\")"));
+    }
+
+    public void ufoneUser() throws InterruptedException {
+
+        clickWhenReady(androidUIAutomator("new UiSelector().description(\"Stores\")"));
+        clickWhenReady(androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"ApparelsDen\"));"));
+        clickWhenReady(androidUIAutomator("new UiSelector().description(\"Get Discount\")"));
+        Thread.sleep(15000);
+        clickWhenReady(androidUIAutomator("new UiSelector().description(\"Ok\")"));
+
     }
 }
